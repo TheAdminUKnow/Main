@@ -324,43 +324,10 @@ PlayerrrSection:NewLabel("After 53 seconds turn on auto farm | ENJOYYY")
 
                             
     local Main = Window:NewTab("Main Menu")
-    local MainSection = Main:NewSection("The Main HUB")   
+    local MainSection = Main:NewSection("The Main Menu HUB")   
 
 
-MainSection:NewButton("Auto Hide Name", "Removes Group and your User", function()
-        print("Clicked")
-    
-       _G.Melee = true ---- make true into false to stop loop
-while _G.Melee == true do wait(3)
-    
-     local success, errMsg = pcall(function()
-                
-                
-                
-                
-                local Player = game.Players.LocalPlayer
-                if game.Players.LocalPlayer.Character.Head.Details.PlayerName or game.Players.LocalPlayer.Character.Head.Details.grouprank then
-                game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Name Has Been Auto Hidden";Text = "N.T.M: Be Careful"})
-                game.Players.LocalPlayer.Character.Head.Details.grouprank:destroy()
-                game.Players.LocalPlayer.Character.Head.Details.PlayerName:destroy()
-               
-                end 
-                
-                wait(1)
-                    
-                local Player = game.Players.LocalPlayer
-                if game.Players.LocalPlayer.Character.Head.Details.PlayerName or game.Players.LocalPlayer.Character.Head.Details.grouprank then
-                game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Name is Shown";Text = "N.T.M: Be Careful"})
 
-                
-end
- if errMsg then
-        print(success)
- end
-end)
-end
-    end)  
-    
     
     MainSection:NewButton("Spam Channel", "", function()
         print("Clicked")
@@ -374,82 +341,49 @@ end)
 
 end
     
+    end)
+    
+    
+MainSection:NewToggle("Anti-Annoy", "ToggleInfo", function(state)
+
+_G.Melee = true ---- make true into false to stop loop
+while _G.Melee == true do wait()
+local success, errMsg = pcall(function()
+game.Players.LocalPlayer.Character.InfluencedVamp:destroy()
+game.Players.LocalPlayer.Character.Anchored:destroy()
+game.Players.LocalPlayer.Character.RagdollConstraints:destroy()
+
+
+
+end)
+
+end 
+                
+         
+    end)
+                
+     
+MainSection:NewButton("Fire Protection", "", function()
+        print("Clicked")
+    
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Fire Protection is on Now";Text = "Made by NTM"})
+       _G.Melee = true ---- make true into false to stop loop
+while _G.Melee == true do wait()
+local success, errMsg = pcall(function()
+game.Players.LocalPlayer.Character.IncendiaOn:destroy()
+game.Players.LocalPlayer.Character.Anchored:destroy()
+end)
+
+end
+    
          end)
     
-    MainSection:NewToggle("Kill Player  (4)", "ToggleInfo", function(state)
-                    
-                        print("Toggle On")
-        
-                        if state then
-        
-                       
-                             local function getPlayer()
-                                    local userInput = game:GetService("UserInputService")
-                                    local cam = workspace.CurrentCamera
-                                    local mousePos = userInput:GetMouseLocation()
-                                    local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
-                                    players = {}
-                                    for _, x in next, game:GetService('Players'):GetPlayers() do
-                                        players[#players + 1] = x.Character
-                                    end
-                                    local raycastParams = RaycastParams.new()
-                                    raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
-                                    raycastParams.FilterDescendantsInstances = players
-                                    raycastParams.IgnoreWater = true
-                                    local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
-                                    if raycastResult then
-                                        for _, x in next, game:GetService('Players'):GetPlayers() do
-                                            if not raycastResult.Instance:IsDescendantOf(x.Character) then
-                                                continue 
-                                            end
-                                            return x
-                                        end
-                                    end
-                                    return false
-                                end
-                                
-                                local function Set(list)
-                                    local set = {}
-                                    for _, l in ipairs(list) do
-                                        if l then
-                                            set[l] = true
-                                        end
-                                    end
-                                    return set
-                                end
-                                game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
-                                 if key == "4" then
-                                local player = getPlayer()
-                                 if player then
-                               -- Script generated by Nut The Menace Spy - credits to Claudev0#8849
-                            
-   local args = {
-    [1] = "Tuning Fork",
-    [2] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Tuning Fork"),
-    [3] = player.Character
-}
 
-game:GetService("ReplicatedStorage").Events.SystemEvents.Tools:FireServer(unpack(args))
-
-
-local args = {
-    [1] = "Stake",
-    [2] = game:GetService("Players").LocalPlayer.Character.Stake,
-    [3] = player.character
-}
-
-game:GetService("ReplicatedStorage").Events.SystemEvents.Tools:FireServer(unpack(args))
-                                end
-                                end
-                                end)   
-                            end
-                           
-            
-                        end)
+   
     
 
 
-MainSection:NewLabel("MUST HAVE A TUNING FORK & STAKE")
+MainSection:NewLabel("The Shop")
 
 MainSection:NewButton("Get Blood Bag ", "", function()
     print("Clicked")
@@ -476,8 +410,6 @@ for i,v in pairs(workspace:GetDescendants()) do
     end)
 
 
-MainSection:NewLabel("MORE FEATURES WILL BE ADDED ON PUBLIC")
-MainSection:NewLabel("RELEASE")
 
 
 
@@ -489,6 +421,23 @@ MainSection:NewLabel("RELEASE")
 
 local Keybindsz = Window:NewTab("Combat")
     local KeybindszSection = Keybindsz:NewSection("Spells With Keybinds  (Keys on the right)")
+    
+    
+    KeybindszSection:NewButton("Self-Heal", "", function()
+    print("Clicked")
+    
+    local args = {
+    [1] = {
+        ["IncantationText"] = "sanitatem",
+        ["mouse"] = CFrame.new(Vector3.new(-148.9997100830078, 4.352075576782227, -59.216468811035156), Vector3.new(0.2721245586872101, -0.23405684530735016, 0.9333625435829163)),
+        ["Target"] = game:GetService("Players").LocalPlayer.Character
+    }
+}
+
+game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+    
+    end)
+
     
     KeybindszSection:NewToggle("Motus (M)", "ToggleInfo", function(state)
             if state then
@@ -598,7 +547,7 @@ local args = {
     [1] = {
         ["IncantationText"] = "errox femus",
         ["mouse"] = CFrame.new(Vector3.new(-148.9997100830078, 4.352075576782227, -59.216468811035156), Vector3.new(0.2721245586872101, -0.23405684530735016, 0.9333625435829163)),
-        ["Target"] = player.character
+        ["Target"] = player.Character
     }
 }
 
@@ -666,7 +615,7 @@ local args = {
     [1] = {
         ["IncantationText"] = "incendia",
         ["mouse"] = CFrame.new(Vector3.new(-148.9997100830078, 4.352075576782227, -59.216468811035156), Vector3.new(0.2721245586872101, -0.23405684530735016, 0.9333625435829163)),
-        ["Target"] = player.character
+        ["Target"] = player.Character
     }
 }
 
@@ -734,7 +683,7 @@ local args = {
     [1] = {
         ["IncantationText"] = "icaeus",
         ["mouse"] = CFrame.new(Vector3.new(-276.4754638671875, 2.8865013122558594, 3.8114778995513916), Vector3.new(0.20050013065338135, -0.7112681269645691, 0.6737191677093506)),
-        ["Target"] = player.character
+        ["Target"] = player.Character
     }
 }
 
@@ -797,15 +746,18 @@ game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(u
                                  if player then
                                -- Script generated by Nut The Menace Spy - credits to Claudev0#8849
 
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
 local args = {
     [1] = {
-        ["IncantationText"] = "ad sommnum",
-        ["mouse"] = CFrame.new(Vector3.new(-148.9997100830078, 4.352075576782227, -59.216468811035156), Vector3.new(0.2721245586872101, -0.23405684530735016, 0.9333625435829163)),
-        ["Target"] = player.character
+        ["IncantationText"] = "ad somnum",
+        ["mouse"] = CFrame.new(Vector3.new(-77.38896179199219, 4.685250282287598, 72.92237091064453), Vector3.new(-0.09812939912080765, -0.3317417800426483, 0.9382527470588684)),
+        ["Target"] = player.Character
     }
 }
 
 game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
 
                                 end
                                 end
@@ -817,7 +769,7 @@ game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(u
     
     
     
-                                KeybindszSection:NewToggle("Lecutio  (R)", "ToggleInfo", function(state)
+    KeybindszSection:NewToggle("Silencio (F)", "ToggleInfo", function(state)
                                  
                         
                         print("Toggle On")
@@ -861,20 +813,96 @@ game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(u
                                     return set
                                 end
                                 game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
-                                 if key == "R" then
+                                 if key == "f" then
                                 local player = getPlayer()
                                  if player then
                                -- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
 
 local args = {
     [1] = {
-        ["IncantationText"] = "lecutio",
-        ["mouse"] = CFrame.new(Vector3.new(-148.9997100830078, 4.352075576782227, -59.216468811035156), Vector3.new(0.2721245586872101, -0.23405684530735016, 0.9333625435829163)),
-        ["Target"] = player.character
+        ["IncantationText"] = "silencio",
+        ["mouse"] = CFrame.new(Vector3.new(-93.99413299560547, 4.01262903213501, 98.08155059814453), Vector3.new(0.1637955904006958, -0.5676750540733337, 0.8067938089370728)),
+        ["Target"] = player.Character
     }
 }
 
 game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
+
+
+                                end
+                                end
+                                end)   
+                        end
+                       
+                        end)
+    
+    
+                                KeybindszSection:NewToggle("Ossox  (u)", "ToggleInfo", function(state)
+                                 
+                        
+                        print("Toggle On")
+        
+                        if state then
+        
+                        
+                        
+                             local function getPlayer()
+                                    local userInput = game:GetService("UserInputService")
+                                    local cam = workspace.CurrentCamera
+                                    local mousePos = userInput:GetMouseLocation()
+                                    local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+                                    players = {}
+                                    for _, x in next, game:GetService('Players'):GetPlayers() do
+                                        players[#players + 1] = x.Character
+                                    end
+                                    local raycastParams = RaycastParams.new()
+                                    raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+                                    raycastParams.FilterDescendantsInstances = players
+                                    raycastParams.IgnoreWater = true
+                                    local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+                                    if raycastResult then
+                                        for _, x in next, game:GetService('Players'):GetPlayers() do
+                                            if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                                                continue 
+                                            end
+                                            return x
+                                        end
+                                    end
+                                    return false
+                                end
+                                
+                                local function Set(list)
+                                    local set = {}
+                                    for _, l in ipairs(list) do
+                                        if l then
+                                            set[l] = true
+                                        end
+                                    end
+                                    return set
+                                end
+                                game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+                                 if key == "u" then
+                                local player = getPlayer()
+                                 if player then
+                               -- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+local args = {
+    [1] = {
+        ["IncantationText"] = "ossox",
+        ["mouse"] = CFrame.new(Vector3.new(-97.53148651123047, 5.181994915008545, 99.40644836425781), Vector3.new(-0.6670830845832825, -0.4188724458217621, -0.6160730123519897)),
+        ["Target"] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
+
 
                                 end
                                 end
@@ -884,9 +912,155 @@ game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(u
                         end)
     
 
+ KeybindszSection:NewToggle("Ring of Fire Trap  (N)", "ToggleInfo", function(state)
+                                 
+                        
+                        print("Toggle On")
+        
+                        if state then
+        
+                        
+                        
+                             local function getPlayer()
+                                    local userInput = game:GetService("UserInputService")
+                                    local cam = workspace.CurrentCamera
+                                    local mousePos = userInput:GetMouseLocation()
+                                    local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+                                    players = {}
+                                    for _, x in next, game:GetService('Players'):GetPlayers() do
+                                        players[#players + 1] = x.Character
+                                    end
+                                    local raycastParams = RaycastParams.new()
+                                    raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+                                    raycastParams.FilterDescendantsInstances = players
+                                    raycastParams.IgnoreWater = true
+                                    local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+                                    if raycastResult then
+                                        for _, x in next, game:GetService('Players'):GetPlayers() do
+                                            if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                                                continue 
+                                            end
+                                            return x
+                                        end
+                                    end
+                                    return false
+                                end
+                                
+                                local function Set(list)
+                                    local set = {}
+                                    for _, l in ipairs(list) do
+                                        if l then
+                                            set[l] = true
+                                        end
+                                    end
+                                    return set
+                                end
+                                game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+                                 if key == "n" then
+                                local player = getPlayer()
+                                 if player then
+   
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+local args = {
+    [1] = {
+        ["IncantationText"] = "incendiamos circulum",
+        ["mouse"] = CFrame.new(Vector3.new(-78.21832275390625, 4.517653465270996, 15.4674072265625), Vector3.new(0.9608926177024841, -0.12765514850616455, 0.2457430362701416)),
+        ["Target"] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
+
+
+                                end
+                                end
+                                end)   
+                        end
+                       
+                        end)
+
+
+
+
+
 
     
-    
+    KeybindszSection:NewToggle("Lecutio  (R)", "ToggleInfo", function(state)
+                                 
+                        
+                        print("Toggle On")
+        
+                        if state then
+        
+                        
+                        
+                             local function getPlayer()
+                                    local userInput = game:GetService("UserInputService")
+                                    local cam = workspace.CurrentCamera
+                                    local mousePos = userInput:GetMouseLocation()
+                                    local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+                                    players = {}
+                                    for _, x in next, game:GetService('Players'):GetPlayers() do
+                                        players[#players + 1] = x.Character
+                                    end
+                                    local raycastParams = RaycastParams.new()
+                                    raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+                                    raycastParams.FilterDescendantsInstances = players
+                                    raycastParams.IgnoreWater = true
+                                    local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+                                    if raycastResult then
+                                        for _, x in next, game:GetService('Players'):GetPlayers() do
+                                            if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                                                continue 
+                                            end
+                                            return x
+                                        end
+                                    end
+                                    return false
+                                end
+                                
+                                local function Set(list)
+                                    local set = {}
+                                    for _, l in ipairs(list) do
+                                        if l then
+                                            set[l] = true
+                                        end
+                                    end
+                                    return set
+                                end
+                                game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+                                 if key == "r" then
+                                local player = getPlayer()
+                                 if player then
+                               -- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+local args = {
+    [1] = {
+        ["IncantationText"] = "lecutio",
+        ["mouse"] = CFrame.new(Vector3.new(-97.85028839111328, 5.643609046936035, 99.83527374267578), Vector3.new(-0.697852611541748, -0.3951079547405243, -0.5974040627479553)),
+        ["Target"] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
+
+
+
+                                end
+                                end
+                                end)   
+                        end
+                       
+                        end)
 
 
     
