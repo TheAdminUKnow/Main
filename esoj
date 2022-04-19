@@ -347,11 +347,12 @@ end
     
 MainSection:NewToggle("Anti-Annoy", "ToggleInfo", function(state)
 
+if state then
 _G.Melee = true ---- make true into false to stop loop
 while _G.Melee == true do wait()
 local success, errMsg = pcall(function()
-game.Players.LocalPlayer.Character.InfluencedVamp:destroy()
-game.Players.LocalPlayer.Character.Anchored:destroy()
+
+game.Players.LocalPlayer.Character.NoRun:destroy()
 game.Players.LocalPlayer.Character.RagdollConstraints:destroy()
 
 
@@ -359,7 +360,7 @@ game.Players.LocalPlayer.Character.RagdollConstraints:destroy()
 end)
 
 end 
-                
+end                
          
     end)
                 
@@ -367,12 +368,29 @@ end
 MainSection:NewButton("Fire Protection", "", function()
         print("Clicked")
     
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Fire Protection is on Now";Text = "Made by NTM"})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Fire Protection ON";Text = "Made by NTM"})
        _G.Melee = true ---- make true into false to stop loop
 while _G.Melee == true do wait()
 local success, errMsg = pcall(function()
 game.Players.LocalPlayer.Character.IncendiaOn:destroy()
 game.Players.LocalPlayer.Character.Anchored:destroy()
+end)
+
+
+end
+    
+end)
+     
+     
+     MainSection:NewButton("Venom Protection", "", function()
+        print("Clicked")
+    
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Venom Protection ON";Text = "Made by NTM"})
+       _G.Melee = true ---- make true into false to stop loop
+while _G.Melee == true do wait()
+local success, errMsg = pcall(function()
+game.Players.LocalPlayer.Character.WolfVenom:destroy()
+
 end)
 
 end
@@ -553,6 +571,241 @@ local Keybindsz = Window:NewTab("Combat")
 game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
     
     end)
+    
+    
+    KeybindszSection:NewButton("Dark Josie's Mass Siphon", "", function()
+    print("Clicked")
+    
+    
+local success, errMsg = pcall(function()
+--Dark Josie Mass Siphon Animation
+AnimationId = "9244814840"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+    
+
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+wait(1)
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+wait(1)
+
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+end)
+    end)
+    
+    KeybindszSection:NewButton("Dark Josie's Levitation", "", function()
+    print("Clicked")
+    
+    AnimationId = "9118954207"
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+    k:Play()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 45
+    wait(50)
+    
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+   local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+ 
+  local ActiveTracks = Humanoid:GetPlayingAnimationTracks()
+ 
+  for _,v in pairs(ActiveTracks)
+ do v:Stop()
+  end
+    
+    end)
 
     
     KeybindszSection:NewToggle("Motus (M)", "ToggleInfo", function(state)
@@ -602,6 +855,67 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
+    end
+    end
+    end  
+    end)
+    end
+        
+    end)
+    
+    
+    KeybindszSection:NewToggle("Invisique (L)", "ToggleInfo", function(state)
+            if state then
+                
+    clicktpon = true                    
+    plr = game.Players.LocalPlayer
+    hum = plr.Character.HumanoidRootPart
+    mouse = plr:GetMouse()
+    mouse.KeyDown:connect(function(key)
+    if key == 'l' then
+    if mouse.Target then
+    if clicktpon then
+
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+local args = {
+    [1] = {
+        ["IncantationText"] = "invisique",
+        ["mouse"] = CFrame.new(Vector3.new(-579.1981201171875, 1.7287228107452393, -76.3225326538086), Vector3.new(-0.7120981812477112, -0.10785786062479019, -0.6937456727027893))
+    }
+}
+
+game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
+
+    end
+    end
+    end
+    end)
+    
+       else
+        
+    clicktpon = false                    
+    plr = game.Players.LocalPlayer
+    hum = plr.Character.HumanoidRootPart
+    mouse = plr:GetMouse()
+    mouse.KeyDown:connect(function(key)
+    if key == 'l' then
+    if mouse.Target then
+    if clicktpon then
+    
+-- Script generated by Nut The Menace Spy - credits to Claudev0#8849
+
+local args = {
+    [1] = {
+        ["IncantationText"] = "invisique",
+        ["mouse"] = CFrame.new(Vector3.new(-579.1981201171875, 1.7287228107452393, -76.3225326538086), Vector3.new(-0.7120981812477112, -0.10785786062479019, -0.6937456727027893))
+    }
+}
+
+game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(unpack(args))
+
 
     end
     end
@@ -1243,10 +1557,149 @@ game:GetService("ReplicatedStorage").Events.Global.Witch.WitchBasic:FireServer(u
 
     
     
+PlayerSection:NewButton("Heretic Spoof", "", function()
+        print("Clicked")
+        
+      
+local success, errMsg = pcall(function()
 
+     clicktpon = true                    
+    plr = game.Players.LocalPlayer
+    hum = plr.Character.HumanoidRootPart
+    mouse = plr:GetMouse()
+    mouse.KeyDown:connect(function(key)
+    if key == 'x' then
+    if mouse.Target then
+    if clicktpon then
+    
+    
+    AnimationId = "9039944729"
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+    k:Play()
+    local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+    
+    _G.Melee = true ---- make true into false to stop loop
+while _G.Melee == true do wait()
+    local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+end
+    
+    
+ 
+    end
+    end
+    end
+    end)
+    
+    clicktpon = true                    
+    plr = game.Players.LocalPlayer
+    hum = plr.Character.HumanoidRootPart
+    mouse = plr:GetMouse()
+    mouse.KeyUp:connect(function(key)
+    if key == 'x' then
+    if mouse.Target then
+    if clicktpon then
+    
+local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+ 
+local ActiveTracks = Humanoid:GetPlayingAnimationTracks()
+ 
+for _,v in pairs(ActiveTracks)
+do v:Stop()
+    
+end
+_G.Melee = false ---- make true into false to stop loop
+while _G.Melee == true do wait()
+    local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+local args = {
+    [1] = "Regen"
+}
+
+game:GetService("ReplicatedStorage").Events.SystemEvents.StatEvent:FireServer(unpack(args))
+
+
+end
+ end
+    end
+    end
+    end)
+    
+
+
+
+game.StarterGui:SetCore("SendNotification", {
+                Title = "NTM | Notification";
+                Text = "Heretic Spoof loaded";
+                Button1 = "Alright";
+                Button2 = "Close";
+                Duration = 3;
+        })
+    
+game.Players.LocalPlayer.Character.Stats.Species.Value = "Heretic"
+
+game.StarterGui:SetCore("SendNotification", {
+                Title = "NTM | Notification";
+                Text = "Self-Siphon Key X";
+                
+                Button2 = "Close";
+                Duration = 6;
+        })
+    
+
+wait(1)
+
+while true do wait()
+game.Players.LocalPlayer.Character.Stats.Energy.Energy.Value = 300
+
+
+
+end
+end)
+     
+    end)
     
     
     
+    
+    
+    PlayerSection:NewLabel("Extras")
 
     PlayerSection:NewButton("Exploit Invisible Mode", "", function()
     print("Clicked")
